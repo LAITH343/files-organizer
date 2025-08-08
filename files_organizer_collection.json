@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "File Organizer API",
+    "_postman_id": "abc12345-def6-7890-ghij-klmnopqrstuv",
+    "description": "Test Laravel file organizing endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Organize JSON",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[{\"letter.txt\":\"Richard\"},{\"paper.pdf\":\"jack\"},{\"test.py\":\"Johnny\"},{\"numbers.docx\":\"jack\"}]"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/organize",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "organize"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Organize File Upload",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/organize-file",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "organize-file"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
